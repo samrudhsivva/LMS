@@ -1,0 +1,37 @@
+.student-home {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .student-home h1, .student-home h2 {
+    color: #333;
+  }
+  
+  .courses {
+    margin-bottom: 40px;
+  }
+  
+  .course {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+  .profile-settings {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .profile-settings label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="checkbox"] {
+    margin-left: 10px;
+  }
+  

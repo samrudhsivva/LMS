@@ -1,0 +1,27 @@
+.admin-dashboard {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .admin-dashboard h1, .admin-dashboard h2 {
+    color: #333;
+  }
+  
+  .admin-dashboard select, .admin-dashboard button {
+    display: block;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .admin-dashboard button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .admin-dashboard button:hover {
+    background-color: #0056b3;
+  }
+  
