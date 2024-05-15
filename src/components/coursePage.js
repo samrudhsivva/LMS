@@ -7,14 +7,14 @@ const Course = () => {
   const [assignment, setAssignment] = useState("");
   const [quiz, setQuiz] = useState("");
   const [syllabusContent, setSyllabusContent] = useState("");
-
+  const APP_URL = 'http://54.147.25.67:5000';
   const handleCourseIdChange = (event) => {
     setCourseId(event.target.value);
   };
 
   const fetchCourse = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/courses/${courseId}`);
+      const response = await fetch(`${APP_URL}/api/courses/${courseId}`);
       if (response.ok) {
         const data = await response.json();
         setCourse(data);
@@ -30,7 +30,7 @@ const Course = () => {
   const addAnnouncement = async () => {
     if (course) {
       try {
-        const response = await fetch(`http://localhost:5000/api/courses/${courseId}/announcement`, {
+        const response = await fetch(`${APP_URL}/api/courses/${courseId}/announcement`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const Course = () => {
   const addAssignment = async () => {
     if (course) {
       try {
-        const response = await fetch(`http://localhost:5000/api/courses/${courseId}/assignment`, {
+        const response = await fetch(`${APP_URL}/api/courses/${courseId}/assignment`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -76,7 +76,7 @@ const Course = () => {
   const addQuiz = async () => {
     if (course) {
       try {
-        const response = await fetch(`http://localhost:5000/api/courses/${courseId}/quiz`, {
+        const response = await fetch(`${APP_URL}/api/courses/${courseId}/quiz`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -99,7 +99,7 @@ const Course = () => {
   const addSyllabusContent = async () => {
     if (course) {
       try {
-        const response = await fetch(`http://localhost:5000/api/courses/${courseId}/syllabus`, {
+        const response = await fetch(`${APP_URL}/api/courses/${courseId}/syllabus`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

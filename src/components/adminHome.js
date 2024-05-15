@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { studentsEnrolled } from '../JSON_DataFiles/studentsEnrolled.js';
+import { studentsEnrolled } from "../JSON_DataFiles/studentsEnrolled.js";
 
 const AdminPage = () => {
   const [courses, setCourses] = useState([]);
@@ -15,12 +15,12 @@ const AdminPage = () => {
   const [studentList, setStudentList] = useState([]);
   const [facultyNameInput, setFacultyNameInput] = useState("");
   const [assignedFaculty, setAssignedFaculty] = useState("");
-
+  const APP_URL = "http://54.147.25.67:5000";
   const [facultyNameInput1, setFacultyNameInput1] = useState("");
   const [assignedFaculty1, setAssignedFaculty1] = useState("");
   const fetchCourses = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/courses");
+      const response = await fetch(`${APP_URL}/api/courses`);
       const data = await response.json();
       setCourses(data);
       setFilteredCourses(data);
@@ -32,7 +32,7 @@ const AdminPage = () => {
   const fetchCoursesByFaculty = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/faculties/${facultyNameInput}/courses`
+        `${APP_URL}/api/faculties/${facultyNameInput}/courses`
       );
       const data = await response.json();
       setFilteredCourses(data);
@@ -45,7 +45,7 @@ const AdminPage = () => {
   useEffect(() => {
     const fetchFaculties = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/faculties");
+        const response = await fetch(`${APP_URL}/api/faculties`);
         const data = await response.json();
         setFaculties(data);
       } catch (error) {
@@ -84,7 +84,7 @@ const AdminPage = () => {
       }
 
       const response = await fetch(
-        `http://localhost:5000/api/faculties/${facultyNameInput1}/add-course`,
+        `${APP_URL}/api/faculties/${facultyNameInput1}/add-course`,
         {
           method: "PUT",
           headers: {
